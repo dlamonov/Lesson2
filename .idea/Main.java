@@ -82,36 +82,3 @@ public class Main {
         array7Offset();
     }
 
-    static void array7Offset() {
-        Scanner scanner2 = new Scanner(System.in);
-        System.out.println("Введите размер массива");
-        int array7Size = scanner2.nextInt();
-        int[] arrayTask7 = new int[array7Size];
-        System.out.println("Заполните массив значениями");
-        for (int i = 0; i < arrayTask7.length; i++) {
-            arrayTask7[i] = scanner2.nextInt();
-        }
-        System.out.println("Введите смещение");
-        int k = scanner2.nextInt(); //величина сдвига
-        if (k > 0) {
-            for (int i = 0; i < k; i++) {
-                int tmp = arrayTask7[array7Size - 1];
-                for (int j = array7Size - 1; j > 0; j--) {
-                    arrayTask7[j] = arrayTask7[j - 1];
-                }
-                arrayTask7[0] = tmp;
-            }
-            System.out.println(Arrays.toString(arrayTask7));
-        } else if (k < 0){
-            for (int i = 0; i < -k; i++) {
-                int tmp = arrayTask7[0];
-                for (int j = 0; j < array7Size - 1; j++) {
-                    arrayTask7[j] = arrayTask7[j + 1];
-                }
-                arrayTask7[array7Size - 1] = tmp;
-            }
-            System.out.println(Arrays.toString(arrayTask7));
-        } else { System.out.println("Смещение равно нулю"); }
-
-    }
-}
